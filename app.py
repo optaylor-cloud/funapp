@@ -221,7 +221,7 @@ if active_chat is None:
 chat_container = st.container(height=520)
 with chat_container:
     for msg in active_chat["messages"]:
-        avatar = "assets/user.png" if msg["role"] == "user" else "assets/ai.png"
+        avatar = "🧑" if msg["role"] == "user" else "🤖"
         with st.chat_message(msg["role"], avatar=avatar):
             st.markdown(msg["content"])
 
@@ -264,7 +264,7 @@ if user_input:
         else:
             response.raise_for_status()
             full_text = ""
-            with st.chat_message("assistant", avatar="assets/ai.png"):
+            with st.chat_message("assistant", avatar="🤖"):
                 placeholder = st.empty()
                 for raw_line in response.iter_lines(decode_unicode=True):
                     if not raw_line:

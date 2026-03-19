@@ -75,3 +75,13 @@
 **AI Suggestion:** Adjusted token loading to use st.secrets["HF_TOKEN"] with safe exception handling and added a Send Test Message button that sends "Hello!" while keeping the chat UI.
 **My Modifications & Reflections:** Updated `app.py` to satisfy the explicit Part A requirement while preserving multi-turn chat behavior.
 
+### Task: Avatar Fallback for Deployment
+**Prompt:** "Fix Streamlit Cloud crash when avatar image files are missing."
+**AI Suggestion:** Check for avatar file existence and fall back to emoji avatars if images are unavailable.
+**My Modifications & Reflections:** Updated `app.py` to use emoji fallbacks so the app won’t crash if assets are missing in deployment.
+
+### Task: Remove PNG Avatars
+**Prompt:** "Remove PNG avatar usage and switch to emoji-only avatars."
+**AI Suggestion:** Replaced image avatar paths with emoji avatars to avoid missing-file errors in deployment.
+**My Modifications & Reflections:** Updated `app.py` to use emojis only; no image files required.
+
